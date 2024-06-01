@@ -20,7 +20,7 @@ func main() {
 	cmd := exec.Command(command, args...)
 	cmd.Stderr = os.Stderr
 	cmd.Stdout = os.Stdout 
-	output, err := cmd.Output()
+	err := cmd.Run()
 	if err != nil {
 		fmt.Printf("Err: %v", err)
 		os.Exit(1)
